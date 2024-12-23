@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { experiences } from "../constans";
 
 const Home = () => {
-  const [timelineKey, setTimelineKey] = useState(0); // 타임라인을 다시 렌더링하기 위한 상태
+  const [timelineKey, setTimelineKey] = useState(0); // 타임라인 렌더링 상태
+  const [isVisible, setIsVisible] = useState(false); // 타임라인 섹션 가시 상태
 
-  const refreshTimeline = () => {
-    setTimelineKey((prevKey) => prevKey + 1); // key 변경
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      const timelineSection = document.getElementById("timeline-section");
+      if (timelineSection) {
+        const rect = timelineSection.getBoundingClientRect();
+        // 화면에 50% 이상 보이면 렌더링 갱신
+        if (rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.5) {
+          if (!isVisible) {
+            setIsVisible(true);
+            setTimelineKey((prevKey) => prevKey + 1); // key 갱신
+          }
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll); // cleanup
+  }, [isVisible]);
 
   return (
     <div className="max-container">
@@ -24,7 +42,7 @@ const Home = () => {
         </div>
 
         {/* 타임라인 */}
-        <div className="mt-12 flex">
+        <div id="timeline-section" className="mt-12 flex">
           <VerticalTimeline
             key={timelineKey} // key를 상태값으로 설정
             className="before:bg-timeline-line"
@@ -75,13 +93,6 @@ const Home = () => {
             ))}
           </VerticalTimeline>
         </div>
-
-        <button
-          onClick={refreshTimeline}
-          className="mt-5 px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          타임라인 애니메이션 다시 실행
-        </button>
       </section>
     </div>
   );
