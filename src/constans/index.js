@@ -31,6 +31,7 @@ import {
     eclipse,
     seoulhwa,
     java,
+    springboot
    
 } from "../assets/icons";
   
@@ -84,6 +85,11 @@ export const skills = [
     {
         imageUrl: spring,
         name: "Spring",
+        type: "Backend",
+    },
+    {
+        imageUrl: springboot,
+        name: "SpringBoot",
         type: "Backend",
     },
     {
@@ -195,7 +201,7 @@ export const experiences = [
         points: [],
     },
     {
-        title: "을지 대학교",
+        title: "을지 대학교 (성남)",
         company_name: "치위생학과",
         icon: university,
         iconBg: "#cdb4db", 

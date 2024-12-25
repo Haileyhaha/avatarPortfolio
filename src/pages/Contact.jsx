@@ -68,17 +68,17 @@ const Contact = () => {
       {alert.show && <Alert {...alert} />}
   
       <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text mt-20'>Get in Touch</h1>
-        <form className='w-full flex flex-col gap-7 mt-14'
+        <h1 className='head-text mt-10 animate__animated animate__pulse'>Get in Touch</h1>
+        <form className='w-full flex flex-col gap-7 mt-10'
               onSubmit={handleSubmit}
         >
           <label className='text-black-500 font-semibold'>
-            Name 🙋
+            Your Name 🙋
             <input
               type='text'
               name='name'
               className='input'
-              placeholder='이름을 입력하세요'
+              placeholder='이름을 입력해주세요'
               required
               value={form.name}
               onChange={handleChange}
@@ -87,12 +87,12 @@ const Contact = () => {
             />
           </label>
           <label className='text-black-500 font-semibold'>
-            Email 📧
+            Your Email 📧
             <input
               type='email'
               name='email'
               className='input'
-              placeholder='이메일을 입력하세요'
+              placeholder='회신받을 이메일 주소를 입력해주세요 (예: example@email.com)'
               required
               value={form.email}
               onChange={handleChange}
@@ -106,7 +106,7 @@ const Contact = () => {
               name='message'
               rows={4}
               className='input'
-              placeholder='내용을 입력하세요'
+              placeholder='내용을 입력해주세요'
               required
               value={form.message}
               onChange={handleChange}

@@ -38,6 +38,7 @@ import linux from './linux.png'
 import eclipse from './eclipse.png'
 import seoulhwa from './seoulhwa.png'
 import java from './java.png'
+import springboot from './springboot.png'
 
 export {
     java,
@@ -79,5 +80,6 @@ export {
     qr,
     utube,
     notion,
-    eclipse
+    eclipse,
+    springboot
 }
