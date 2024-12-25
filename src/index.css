@@ -79,6 +79,10 @@ body:has(.card[data-color="green"]:hover) {
     }
 }
 
+.animate__animated {
+    display: inline-block !important; /* Tailwind가 덮어쓰는 경우 방지 */
+  }
+
 .glassmorphism {
     background: rgba(8, 116, 239, 0.07);
     backdrop-filter: blur(10px);

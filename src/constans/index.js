@@ -1,4 +1,4 @@
-import {  excel, dental,sqld , develop} from "../assets/images";
+import {  excel, dental,sqld , develop, highschool, university} from "../assets/images";
 import {
     contact,
     css,
@@ -194,25 +194,23 @@ export const experiences = [
         date: "2013.09",
         points: [],
     },
+    {
+        title: "을지 대학교",
+        company_name: "치위생학과",
+        icon: university,
+        iconBg: "#cdb4db", 
+        date: "2011.03 - 2016.02",
+        points: [],
+    },
+    {
+        title: "한솔 고등학교",
+        company_name: "",
+        icon: highschool,
+        iconBg: "#ffe5b4", 
+        date: "2008.03 - 2011.02",
+        points: [],
+    },
     
-];
-
-export const socialLinks = [
-    {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
-    },
-    {
-        name: 'GitHub',
-        iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
-    },
-    {
-        name: 'LinkedIn',
-        iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
-    }
 ];
 
 export const projects = [
@@ -244,7 +242,7 @@ export const projects = [
         theme: 'btn-back-pink',
         name: 'Seoulwha 개인 Notion',
         description: '팀 프로젝트에서 제가 담당했던 부분과 구현 과정을 정리한 자료입니다. 프로젝트 진행 중 발생했던 오류들을 해결한 방법과 경험을 기록하여, 유사한 문제를 해결할 때 참고할 수 있도록 구성했습니다.',
-        link: 'https://married-hoodie-05c.notion.site/1191a9b0ba8680a99127c3824d790be9?pvs=4',
+        link: 'https://principled-crab-f8e.notion.site/165a127563b7804c95a7fe35dfbdb8c6',
     },
     {
         iconUrl: github,

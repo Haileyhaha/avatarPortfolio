@@ -5,22 +5,23 @@ import { skills, experiences } from '../constans';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import CTA from '../components/CTA';
+import 'animate.css';
 
 const Home = () => {
   return (
-    // <div className="bg-[#f7f7f7] min-h-screen">
     <div className="max-container">
       {/* 상단 섹션 */}
       <section className="flex flex-col lg:flex-row justify-between items-start gap-10">
         {/* Left Section */}
         <div style={{ flex: 1.5 }}>
-          <h1 className="head-text mt-20">
+          <h1 className="head-text mt-20 animate__animated animate__jackInTheBox">
             안녕하세요!
             <br />
+         
             <span className="blue-gradient_text font-semibold drop-shadow">서혜인</span>입니다.
           </h1>
-          <div className="mt-5 flex flex-col gap-3 text-slate-500">
-            <p>지속적으로 성장하고 배움을 즐거워하는 저는, 이런 기술들을 가지고 있습니다.</p>
+          <div className="mt-5 flex flex-col gap-3 text-slate-500 ">
+            <p className='animate__animated animate__lightSpeedInLeft'>지속적으로 성장하고 배움을 즐거워하는 저는, 이런 기술들을 가지고 있습니다.</p>
           </div>
           <div className="py-10 flex flex-col">
             <h3 className="subhead-text">My Skills</h3>
@@ -79,9 +80,9 @@ const Home = () => {
         {/* 타임라인 */}
         <div className="mt-12 flex">
           <VerticalTimeline className="before:bg-timeline-line" >
-            {experiences.map((experience) => (
+            {experiences.map((experience,index) => (
               <VerticalTimelineElement
-                key={experience.company_name}
+                key={index}
                 date={experience.date}
                 icon={
                   <div className="flex justify-center items-center w-full h-full">
@@ -93,12 +94,15 @@ const Home = () => {
                   </div>
                 }
                 iconStyle={{ background: experience.iconBg }}
-
                 contentStyle={{
                   backgroundColor: '#fafafa', 
                   borderBottom: '8px',
                   borderStyle: 'solid',
                   borderBottomColor: experience.iconBg,
+                }}
+                intersectionObserverProps={{
+                  rootMargin: '0px 0px -20% 0px', // 뷰포트 하단에서 20% 미리 감지
+                  triggerOnce: false, // 반복 트리거 활성화
                 }}
               >
                 <div>
@@ -129,7 +133,6 @@ const Home = () => {
       <hr className="border-slate-300" />
       <CTA />
     </div>
-    // </div>
   );
 };
 

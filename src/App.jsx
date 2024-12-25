@@ -2,33 +2,16 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
+import ScrollTopButton from './components/ScrollTopButton'
+import Contact from "./pages/Contact";
 import ocean from './assets/ocean.mp3'
-import { soundoff, soundon } from './assets/icons'
 import { useRef } from 'react';
 import React, { useState, useEffect } from 'react'
-import ScrollTopButton from './ScrollTopButton'
-import Contact from "./pages/Contact";
+import { soundoff, soundon } from './assets/icons'
+
 
 const App = () => {
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-      <>
-        <Route index element={<Home />} />
-        <Route
-          path="/home"
-          element={
-            <>
-              <Home />
-            </>
-          }
-        />
-        <Route path="/projects" element={<Projects />} />
-        <Route path='/contact' element={<Contact/>}/>
-      </>
-    )
-  );
-
-  const audioRef = useRef(new Audio(ocean));
+const audioRef = useRef(new Audio(ocean));
       audioRef.current.volume = 0.4;
       audioRef.current.loop = true;
       
@@ -44,6 +27,17 @@ const App = () => {
         }
       },[isplayingMusic])
 
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <>
+        <Route index element={<Home />} />
+        <Route path="/home" element={<><Home /></>}/>
+        <Route path="/projects" element={<Projects />} />
+        <Route path='/contact' element={<Contact/>}/>
+      </>
+    )
+  );
+  
   return (
     <>
       <Navbar />
