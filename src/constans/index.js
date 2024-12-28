@@ -234,7 +234,7 @@ export const projects = [
         name: 'Seoulhwa 시연 영상',
         description: `제가 구현한 기능의 동작 원리를 효과적으로 설명하기 위해 데모 영상을 준비했습니다.
                     해당 영상을 통해 기능의 구체적인 작동 방식과 결과물을 확인하실 수 있습니다.`,
-        link: 'https://www.youtube.com/watch?v=mJcZFmhaSaY',
+        link: 'https://www.youtube.com/watch?v=pFwExjzInms',
     },
     {
         iconUrl: notion,
