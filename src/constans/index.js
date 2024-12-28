@@ -232,8 +232,8 @@ export const projects = [
         iconUrl: utube,
         theme: 'btn-back-red',
         name: 'Seoulhwa 시연 영상',
-        description: `제가 구현한 기능의 동작 원리를 효과적으로 설명하기 위해 데모 영상을 준비했습니다.
-                    해당 영상을 통해 기능의 구체적인 작동 방식과 결과물을 확인하실 수 있습니다.`,
+        description: `제가 구현한 기능을 직접 확인하실 수 있도록 데모 영상을 준비했습니다. 
+                    이 영상을 통해 기능이 어떻게 작동하는지와 그 결과물을 직관적으로 보실 수 있습니다.`,
         link: 'https://www.youtube.com/watch?v=pFwExjzInms',
     },
     {
