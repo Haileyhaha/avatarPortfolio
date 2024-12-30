@@ -25,7 +25,7 @@ const Home = () => {
           </div>
           <div className="py-10 flex flex-col">
             <h3 className="subhead-text">My Skills</h3>
-            <div className="mt-16 flex flex-wrap gap-12">
+            <div className="mt-16 flex flex-wrap gap-10">
               {skills.map((skill, index) => (
                 <div key={index} className="block-container w-10 h-10">
                   <div className="btn-back rounded-xl" />
@@ -35,8 +35,8 @@ const Home = () => {
                       alt={skill.name}
                       className="w-1/2 h-1/2 object-contain"
                     />
-                    <p className="text-xs z-10">{skill.name}</p>
                   </div>
+                  <p className="text-xs z-10">{skill.name}</p>
                 </div>
               ))}
             </div>
