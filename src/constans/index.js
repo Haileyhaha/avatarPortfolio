@@ -226,7 +226,7 @@ export const projects = [
         name: 'Seoulhwa',
         description: `"설화(Seoulhwa)”는 한국의 수도 “서울”과 “이야기”를 의미하는 한국어 “화”를 결합한 이름입니다. 
                         설화는 외국인 방문객을 위한 영어 기반 플랫폼으로, 관리 페이지는 한국어로 운영됩니다. `,
-        link: 'http://hyeri.wn7.com/',
+        link: 'https://seoulwha.shop/',
     },
     {
         iconUrl: utube,
