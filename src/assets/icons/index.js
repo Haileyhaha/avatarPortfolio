@@ -39,8 +39,12 @@ import eclipse from './eclipse.png'
 import seoulhwa from './seoulhwa.png'
 import java from './java.png'
 import springboot from './springboot.png'
+import math from './math.png'
+import computer from './computer.png'
 
 export {
+    computer,
+    math,
     java,
     seoulhwa,
     mysql,

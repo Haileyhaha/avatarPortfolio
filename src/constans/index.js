@@ -270,6 +270,6 @@ export const projects = [
         theme: 'btn-back-black',
         name: '수학 학습 관련',
         description: '개발에 필요한 수학 개념과 이를 프로그래밍에 적용한 내용을 정리한 리포지토리입니다.',
-        link: 'https://github.com/Haileyhaha/mathmatics',
+        link:  'https://github.com/Haileyhaha/mathmatics',
     }
 ];

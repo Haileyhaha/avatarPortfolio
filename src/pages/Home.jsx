@@ -6,6 +6,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import CTA from '../components/CTA';
 import 'animate.css';
+import { computer } from '../assets/icons';
 
 const Home = () => {
   return (
@@ -23,28 +24,32 @@ const Home = () => {
           <div className="mt-5 flex flex-col gap-3 text-slate-500 ">
             <p className='animate__animated animate__lightSpeedInLeft'>지속적으로 성장하고 배움을 즐거워하는 저는, 이런 기술들을 가지고 있습니다.</p>
           </div>
-          <div className="py-10 flex flex-col">
+          {/* My Skills 섹션 */}
+          <div className="flex-1 mt-10">
             <h3 className="subhead-text">My Skills</h3>
-            <div className="mt-16 flex flex-wrap gap-10">
+            
+            <div className="mt-10 flex flex-wrap gap-8">
               {skills.map((skill, index) => (
-                <div key={index} className="block-container w-20 h-20">
-                  <div className="btn-back rounded-xl" />
-                  <div className="btn-front rounded-xl flex flex-col justify-center items-center">
-                    <img
-                      src={skill.imageUrl}
-                      alt={skill.name}
-                      className="w-1/2 h-1/2 object-contain"
-                    />
-                     <p className="text-xs z-10">{skill.name}</p>
-                  </div>
+                <div key={index} className="block-container w-14 h-14 flex flex-col items-center">
+                <div className="btn-back rounded-xl" />
+                <div className="btn-front rounded-xl flex flex-col justify-center items-center">
+                  <img
+                    src={skill.imageUrl}
+                    alt={skill.name}
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                  <p className="text-[10px] leading-tight text-center break-words z-10 mt-1">
+                    {skill.name}
+                  </p>
                 </div>
+              </div>
               ))}
             </div>
           </div>
         </div>
 
         {/* Right Section (Canvas) */}
-        <div style={{ flex: 0.5 }} className="mt-20">
+        <div style={{ flex: 0.5 }} className="mt-10">
           <Canvas
             camera={{ position: [3, 0, 15], fov: 8 }}
             style={{
@@ -60,7 +65,6 @@ const Home = () => {
           </Canvas>
         </div>
       </section>
-
       {/* 입사 후 포부 섹션 */}
       <section className="py-16">
         <h3 className="subhead-text">입사 후 포부</h3>
@@ -76,9 +80,36 @@ const Home = () => {
             성과를 통해 회사와 함께 성장하며, 실질적인 가치를 창출하는 데 최선을 다하겠습니다.
           </p>
         </div>
-
+        
+        <div className="mt-20 flex flex-col gap-3">
+          <h3 className="subhead-text">팀 프로젝트 시연 영상</h3>
+          <div className="relative mt-2 w-full max-w-[1120px] mx-auto">
+            {/* 모니터 이미지 */}
+            <img
+              src={computer}
+              alt="Monitor Background"
+              className="w-full h-auto object-contain"
+            />
+            {/* YouTube 영상 */}
+            <div
+              className="
+                absolute 
+                top-[3%] left-[2%] 
+                w-[96%] h-[83%]
+              "
+            >
+              <iframe
+                className="w-full h-full border-0"
+                src="https://www.youtube.com/embed/pFwExjzInms"
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+        </div>  
+        </div>
         {/* 타임라인 */}
-        <div className="mt-12 flex">
+        <div className="mt-24 flex">
           <VerticalTimeline className="before:bg-timeline-line" >
             {experiences.map((experience,index) => (
               <VerticalTimelineElement

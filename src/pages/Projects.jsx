@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { projects} from '../constans'
 import { Link } from 'react-router-dom'
-import { arrow } from '../assets/icons'
+import { arrow, math } from '../assets/icons'
 import CTA from '../components/CTA'
 import 'animate.css';
 
@@ -38,7 +38,6 @@ const Projects = () => {
                 <p className='mt-2 text-slate-500'>
                   {project.description}
                 </p>
-                {/*  */}
                 <div className='mt-5 flex items-center gap-2 font-poppins transition-transform duration-300 hover:translate-x-4'>
                   <Link
                     to={project.link}
@@ -53,10 +52,22 @@ const Projects = () => {
                     className='w-4 h-4 object-contain'
                   />
                 </div>
-              
+                {project.div && project.div}
             </div>
           </div>
         ))}
+          <Link
+            to="https://mathapp-5hpz7fstwv34aoyyuqib8y.streamlit.app/"
+            target="_blank"
+            className="font-semibold text-blue-600 text-xl hover:scale-105 transition-all duration-300 ease-in-out flex items-center gap-4"
+          >
+            <img
+              src={math}
+              alt="Math Icon"
+              className="w-10 h-10"
+            />
+            수학 관련 프로젝트 배포 사이트
+          </Link>
       </div>
 
       <hr className='border-slate-200' />

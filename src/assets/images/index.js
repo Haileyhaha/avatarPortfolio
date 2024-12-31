@@ -7,6 +7,7 @@ import develop from './develop.png'
 import highschool from './highschool.png'
 import university from './university.png'
 
+
 export {
     highschool,
     university,
@@ -14,5 +15,6 @@ export {
     dental,
     sqld,
     logo,
-    develop
+    develop,
+    
 }
